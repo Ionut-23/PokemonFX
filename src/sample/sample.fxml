@@ -17,124 +17,108 @@
         <RowConstraints maxHeight="160.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;">
+        <Pane fx:id="p1" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;">
             <children>
-                <ImageView fx:id="img1" fitHeight="90.0" fitWidth="130.0" layoutX="40.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../Imagenes/dragonite.gif" />
-               </image></ImageView>
+                <ImageView fx:id="imagen1" fitHeight="90.0" fitWidth="130.0" layoutX="40.0" layoutY="51.0" onMouseClicked="#clickImagen1" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Imagenes/dragonite.gif" />
+                </ImageView>
                 <Label fx:id="nombre1" layoutX="40.0" layoutY="34.0" prefHeight="17.0" prefWidth="64.0" text="Label" textFill="WHITE" />
                 <Label fx:id="nivel1" layoutX="132.0" layoutY="34.0" prefHeight="17.0" prefWidth="44.0" text="Label" textFill="WHITE" />
                 <Label layoutX="33.0" layoutY="142.0" text="PS" textFill="#f3ff00" />
-                <ProgressBar layoutX="48.0" layoutY="145.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
+                <ProgressBar fx:id="pb1" layoutX="48.0" layoutY="145.0" prefHeight="11.0" prefWidth="109.0" progress="1.0">
+               <effect>
+                  <ColorAdjust />
+               </effect></ProgressBar>
                 <Label fx:id="vida1" layoutX="43.0" layoutY="159.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
-                <CheckBox layoutX="138.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
+                <CheckBox fx:id="cb1" layoutX="138.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="160.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/m.png" />
-                    </image></ImageView>
+                    <Image url="@../Imagenes/m.png" />
+                </ImageView>
             </children>
         </Pane>
-        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="1">
+        <Pane fx:id="p2" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="1">
             <children>
-                <ImageView fx:id="img2" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/absol.gif" />
-                    </image></ImageView>
+                <ImageView fx:id="imagen2" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="51.0" onMouseClicked="#clickImagen2" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Imagenes/absol.gif" />
+                </ImageView>
                 <Label fx:id="nombre2" layoutX="40.0" layoutY="34.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
                 <Label fx:id="nivel2" layoutX="132.0" layoutY="34.0" prefHeight="17.0" prefWidth="44.0" text="Label" textFill="WHITE" />
                 <Label layoutX="33.0" layoutY="142.0" text="PS" textFill="#f3ff00" />
-                <ProgressBar layoutX="48.0" layoutY="145.0" prefHeight="11.0" prefWidth="109.0" progress="0.3">
+                <ProgressBar fx:id="pb2" layoutX="48.0" layoutY="145.0" prefHeight="11.0" prefWidth="109.0" progress="1.0">
                <effect>
-                  <ColorAdjust contrast="0.46" hue="0.93" />
+                  <ColorAdjust />
                </effect></ProgressBar>
                 <Label fx:id="vida2" layoutX="43.0" layoutY="159.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
-                <CheckBox layoutX="138.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
+                <CheckBox fx:id="cb2" layoutX="138.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="160.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/m.png" />
-                    </image></ImageView>
+                    <Image url="@../Imagenes/m.png" />
+                </ImageView>
             </children>
         </Pane>
-        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="2">
+        <Pane fx:id="p3" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="2">
             <children>
-                <ImageView fx:id="img3" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="51.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/raichu.gif" />
-                    </image></ImageView>
+                <ImageView fx:id="imagen3" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="51.0" onMouseClicked="#clickImagen3" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Imagenes/raichu.gif" />
+                </ImageView>
                 <Label fx:id="nombre3" layoutX="40.0" layoutY="34.0" prefHeight="17.0" prefWidth="64.0" text="Label" textFill="WHITE" />
                 <Label fx:id="nivel3" layoutX="132.0" layoutY="34.0" prefHeight="17.0" prefWidth="44.0" text="Label" textFill="WHITE" />
                 <Label layoutX="33.0" layoutY="142.0" text="PS" textFill="#f3ff00" />
-                <ProgressBar layoutX="48.0" layoutY="145.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
+                <ProgressBar fx:id="pb3" layoutX="48.0" layoutY="145.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
                 <Label fx:id="vida3" layoutX="43.0" layoutY="159.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
-                <CheckBox layoutX="138.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
+                <CheckBox fx:id="cb3" layoutX="138.0" layoutY="159.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="160.0" layoutY="116.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/f.png" />
-                    </image></ImageView>
+                    <Image url="@../Imagenes/f.png" />
+                </ImageView>
             </children>
         </Pane>
-        <Pane prefHeight="181.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.rowIndex="1">
+        <Pane fx:id="p4" prefHeight="181.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.rowIndex="1">
             <children>
-                <ImageView fx:id="img4" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/squirtle.gif" />
-                    </image></ImageView>
+                <ImageView fx:id="imagen4" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="39.0" onMouseClicked="#clickImagen4" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Imagenes/squirtle.gif" />
+                </ImageView>
                 <Label fx:id="nombre4" layoutX="40.0" layoutY="23.0" prefHeight="17.0" prefWidth="64.0" text="Label" textFill="WHITE" />
                 <Label fx:id="nivel4" layoutX="132.0" layoutY="23.0" prefHeight="17.0" prefWidth="44.0" text="Label" textFill="WHITE" />
                 <Label layoutX="31.0" layoutY="132.0" text="PS" textFill="#f3ff00" />
-                <ProgressBar layoutX="46.0" layoutY="134.0" prefHeight="11.0" prefWidth="109.0" progress="0.88">
-               <effect>
-                  <ColorAdjust brightness="0.17" hue="-0.24" />
-               </effect></ProgressBar>
+                <ProgressBar fx:id="pb4" layoutX="46.0" layoutY="134.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
                 <Label fx:id="vida4" layoutX="43.0" layoutY="148.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
-                <CheckBox layoutX="138.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
+                <CheckBox fx:id="cb4" layoutX="138.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="160.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/m.png" />
-                    </image></ImageView>
+                    <Image url="@../Imagenes/m.png" />
+                </ImageView>
             </children>
         </Pane>
-        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="1" GridPane.rowIndex="1">
+        <Pane fx:id="p5" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="1" GridPane.rowIndex="1">
             <children>
-                <ImageView fx:id="img5" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/vaporeon.gif" />
-                    </image></ImageView>
+                <ImageView fx:id="imagen5" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="39.0" onMouseClicked="#clickImagen5" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Imagenes/vaporeon.gif" />
+                </ImageView>
                 <Label fx:id="nombre5" layoutX="40.0" layoutY="23.0" prefHeight="17.0" prefWidth="64.0" text="Label" textFill="WHITE" />
                 <Label fx:id="nivel5" layoutX="132.0" layoutY="23.0" prefHeight="17.0" prefWidth="44.0" text="Label" textFill="WHITE" />
                 <Label layoutX="31.0" layoutY="132.0" text="PS" textFill="#f3ff00" />
-                <ProgressBar layoutX="46.0" layoutY="134.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
+                <ProgressBar fx:id="pb5" layoutX="46.0" layoutY="134.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
                 <Label fx:id="vida5" layoutX="43.0" layoutY="148.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
-                <CheckBox layoutX="138.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
+                <CheckBox fx:id="cb5" layoutX="138.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="160.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/f.png" />
-                    </image></ImageView>
+                    <Image url="@../Imagenes/f.png" />
+                </ImageView>
             </children>
         </Pane>
-        <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="2" GridPane.rowIndex="1">
+        <Pane fx:id="p6" prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #8E44AD;" GridPane.columnIndex="2" GridPane.rowIndex="1">
             <children>
-                <ImageView fx:id="img6" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="39.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/talonflame.gif" />
-                    </image></ImageView>
+                <ImageView fx:id="imagen6" fitHeight="90.0" fitWidth="120.0" layoutX="40.0" layoutY="39.0" onMouseClicked="#clickImagen6" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../Imagenes/talonflame.gif" />
+                </ImageView>
                 <Label fx:id="nombre6" layoutX="40.0" layoutY="23.0" prefHeight="17.0" prefWidth="64.0" text="Label" textFill="WHITE" />
                 <Label fx:id="nivel6" layoutX="132.0" layoutY="23.0" prefHeight="17.0" prefWidth="44.0" text="Label" textFill="WHITE" />
                 <Label layoutX="31.0" layoutY="132.0" text="PS" textFill="#f3ff00" />
-                <ProgressBar layoutX="46.0" layoutY="134.0" prefHeight="11.0" prefWidth="109.0" progress="0.61">
-               <effect>
-                  <ColorAdjust contrast="0.57" hue="-0.76" />
-               </effect></ProgressBar>
+                <ProgressBar fx:id="pb6" layoutX="46.0" layoutY="134.0" prefHeight="11.0" prefWidth="109.0" progress="1.0" />
                 <Label fx:id="vida6" layoutX="43.0" layoutY="148.0" prefHeight="17.0" prefWidth="53.0" text="Label" textFill="WHITE" />
-                <CheckBox layoutX="138.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
+                <CheckBox fx:id="cb6" layoutX="138.0" layoutY="148.0" mnemonicParsing="false" style="-fx-background-color: #28B463;" />
                 <ImageView fitHeight="25.0" fitWidth="28.0" layoutX="160.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
-                    <image>
-                        <Image url="@../Imagenes/f.png" />
-                    </image></ImageView>
+                    <Image url="@../Imagenes/f.png" />
+                </ImageView>
             </children>
         </Pane>
-        <Button fx:id="Salir" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="53.0" text="Salir" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
-      <Button fx:id="Siguiente" alignment="CENTER" mnemonicParsing="false" prefHeight="25.0" prefWidth="115.0" text="Elige un pokemón" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+        <Button fx:id="Siguiente" alignment="CENTER" mnemonicParsing="false" onMouseClicked="#clickSiguiente" prefHeight="25.0" prefWidth="78.0" text="Siguiente" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
     </children>
 </GridPane>

@@ -1,18 +1,27 @@
 package sample;
 
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.CheckBox;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
-import javax.swing.text.html.ImageView;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
+import javafx.stage.Stage;
+
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.MouseEvent;
+import java.io.IOException;
 
 public class Controller {
 
-    @FXML
-    public Button Salir;
     @FXML
     public Button Siguiente;
 
@@ -73,81 +82,187 @@ public class Controller {
     public Label vida6;
 
     @FXML
+    public CheckBox cb1;
+    @FXML
+    public CheckBox cb2;
+    @FXML
+    public CheckBox cb3;
+    @FXML
+    public CheckBox cb4;
+    @FXML
+    public CheckBox cb5;
+    @FXML
+    public CheckBox cb6;
+
+    @FXML
+    public Pane p1;
+    @FXML
+    public Pane p2;
+    @FXML
+    public Pane p3;
+    @FXML
+    public Pane p4;
+    @FXML
+    public Pane p5;
+    @FXML
+    public Pane p6;
+
+    @FXML
+    public ProgressBar pb1;
+    @FXML
+    public ProgressBar pb2;
+    @FXML
+    public ProgressBar pb3;
+    @FXML
+    public ProgressBar pb4;
+    @FXML
+    public ProgressBar pb5;
+    @FXML
+    public ProgressBar pb6;
+
+    ClasePokemon pokemon1 = new ClasePokemon("Dragonite",65,270,"\\Imagenes\\dragonite.gif");
+    ClasePokemon pokemon2 = new ClasePokemon("Absol",45,145,"\\Imagenes\\absol.gif");
+    ClasePokemon pokemon3 = new ClasePokemon("Raichu",53,234,"\\Imagenes\\raichu.gif");
+    ClasePokemon pokemon4 = new ClasePokemon("Squirtle",35,130,"\\Imagenes\\squirtle.gif");
+    ClasePokemon pokemon5 = new ClasePokemon("Vaporeon",58,290,"\\Imagenes\\vaporeon.gif");
+    ClasePokemon pokemon6 = new ClasePokemon("Talonflame",50,190,"\\Imagenes\\talonflame.gif");
+    ClasePokemon auxiliar;
+
+    @FXML
     public void initialize(){
+        pokedex(nombre1,nivel1,vida1,imagen1,pokemon1);
+        pokedex(nombre2,nivel2,vida2,imagen2,pokemon2);
+        pokedex(nombre3,nivel3,vida3,imagen3,pokemon3);
+        pokedex(nombre4,nivel4,vida4,imagen4,pokemon4);
+        pokedex(nombre5,nivel5,vida5,imagen5,pokemon5);
+        pokedex(nombre6,nivel6,vida6,imagen6,pokemon6);
+    }
+    
+    public void clickImagen1(){
+        cambiar(nombre1,nivel1,vida1,cb1,p1);
+        pokemon1.imagen = "\\Imagenes\\dragoniteespalda.gif";
+        auxiliar = pokemon1;
+        estatico(nombre2,nivel2,vida2,cb2,p2);
+        estatico(nombre3,nivel3,vida3,cb3,p3);
+        estatico(nombre4,nivel4,vida4,cb4,p4);
+        estatico(nombre5,nivel6,vida5,cb5,p5);
+        estatico(nombre6,nivel2,vida6,cb6,p6);
+    }
+    public void clickImagen2(){
+        estatico(nombre1,nivel1,vida1,cb1,p1);
+        cambiar(nombre2,nivel2,vida2,cb2,p2);
+        pokemon2.imagen = "\\Imagenes\\absolespalda.gif";
+        auxiliar = pokemon2;
+        estatico(nombre3,nivel3,vida3,cb3,p3);
+        estatico(nombre4,nivel4,vida4,cb4,p4);
+        estatico(nombre5,nivel6,vida5,cb5,p5);
+        estatico(nombre6,nivel2,vida6,cb6,p6);
+    }
+    public void clickImagen3(){
+        estatico(nombre1,nivel1,vida1,cb1,p1);
+        estatico(nombre2,nivel2,vida2,cb2,p2);
+        cambiar(nombre3,nivel3,vida3,cb3,p3);
+        pokemon3.imagen = "\\Imagenes\\raichuespalda.gif";
+        auxiliar = pokemon3;
+        estatico(nombre4,nivel4,vida4,cb4,p4);
+        estatico(nombre5,nivel6,vida5,cb5,p5);
+        estatico(nombre6,nivel2,vida6,cb6,p6);
+    }
+    public void clickImagen4(){
+        estatico(nombre1,nivel1,vida1,cb1,p1);
+        estatico(nombre2,nivel2,vida2,cb2,p2);
+        estatico(nombre3,nivel3,vida3,cb3,p3);
+        cambiar(nombre4,nivel4,vida4,cb4,p4);
+        pokemon4.imagen = "\\Imagenes\\squirtleespalda.gif";
+        auxiliar = pokemon4;
+        estatico(nombre5,nivel6,vida5,cb5,p5);
+        estatico(nombre6,nivel2,vida6,cb6,p6);
+    }
+    public void clickImagen5(){
+        estatico(nombre1,nivel1,vida1,cb1,p1);
+        estatico(nombre2,nivel2,vida2,cb2,p2);
+        estatico(nombre3,nivel3,vida3,cb3,p3);
+        estatico(nombre4,nivel4,vida4,cb4,p4);
+        cambiar(nombre5,nivel6,vida5,cb5,p5);
+        pokemon5.imagen = "\\Imagenes\\vaporeonespalda.gif";
+        auxiliar = pokemon5;
+        estatico(nombre6,nivel2,vida6,cb6,p6);
+    }
+    public void clickImagen6(){
+        estatico(nombre1,nivel1,vida1,cb1,p1);
+        estatico(nombre2,nivel2,vida2,cb2,p2);
+        estatico(nombre3,nivel3,vida3,cb3,p3);
+        estatico(nombre4,nivel4,vida4,cb4,p4);
+        estatico(nombre5,nivel6,vida5,cb5,p5);
+        cambiar(nombre6,nivel2,vida6,cb6,p6);
+        pokemon6.imagen = "\\Imagenes\\talonflameespalda.gif";
+        auxiliar = pokemon6;
+    }
 
-        ClasePokemon pokemon1 = new ClasePokemon("Dragonite","Nv 65","270/270");
-        ClasePokemon pokemon2 = new ClasePokemon("Absol","Nv 45","50/145");
-        ClasePokemon pokemon3 = new ClasePokemon("Raichu","Nv 53","234/234");
-        ClasePokemon pokemon4 = new ClasePokemon("Squirtle","Nv 35","120/130");
-        ClasePokemon pokemon5 = new ClasePokemon("Vaporeon","Nv 58","290/290");
-        ClasePokemon pokemon6 = new ClasePokemon("Talonflame","Nv 50","110/190");
 
-        nombre1.setText(pokemon1.nombre);
-        nivel1.setText(pokemon1.nivel);
-        vida1.setText(pokemon1.vida);
+    public static void pokedex(Label nombre, Label nivel, Label vida, ImageView imagen, ClasePokemon pokemon) {
+        nombre.setText(pokemon.nombre);
+        nivel.setText("Nv. "+pokemon.nivel);
+        vida.setText(pokemon.vida+"/"+pokemon.vida);
+        Image image = new Image(pokemon.imagen);
+        imagen.setImage(image);
+    }
 
-        nombre2.setText(pokemon2.nombre);
-        nivel2.setText(pokemon2.nivel);
-        vida2.setText(pokemon2.vida);
-
-        nombre3.setText(pokemon3.nombre);
-        nivel3.setText(pokemon3.nivel);
-        vida3.setText(pokemon3.vida);
-
-        nombre4.setText(pokemon4.nombre);
-        nivel4.setText(pokemon4.nivel);
-        vida4.setText(pokemon4.vida);
-
-        nombre5.setText(pokemon5.nombre);
-        nivel5.setText(pokemon5.nivel);
-        vida5.setText(pokemon5.vida);
-
-        nombre6.setText(pokemon6.nombre);
-        nivel6.setText(pokemon6.nivel);
-        vida6.setText(pokemon6.vida);
+    public static void cambiar(Label nombre, Label nivel, Label vida, CheckBox checkbox, Pane pane) {
+        nombre.setStyle("-fx-text-fill: blue;");
+        nivel.setStyle("-fx-text-fill: blue;");
+        vida.setStyle("-fx-text-fill: blue;");
+        checkbox.setSelected(true);
+        pane.setStyle("-fx-background-color: #85C1E9");
 
     }
 
-    @FXML
-    public void selecDragonite(ActionEvent event){
-        Siguiente.setText("Siguiente");
-        nombre1.setTextFill(Color.BLUE);
-        nivel1.setTextFill(Color.BLUE);
-        vida1.setTextFill(Color.BLUE);
+    public static void estatico(Label nombre, Label nivel, Label vida, CheckBox checkbox, Pane pane) {
+        nombre.setStyle("-fx-text-fill: #ffffff;");
+        nivel.setStyle("-fx-text-fill: #ffffff;");
+        vida.setStyle("-fx-text-fill: #ffffff;");
+        checkbox.setSelected(false);
+        pane.setStyle("-fx-background-color: #8E44AD");
     }
-    @FXML
-    public void selecAbsol(ActionEvent event){
-        Siguiente.setText("Siguiente");
-        nombre1.setTextFill(Color.BLUE);
-        nivel1.setTextFill(Color.BLUE);
-        vida1.setTextFill(Color.BLUE);
+
+    public void clickSiguiente() throws IOException {
+        Stage stage = new Stage();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("sample2.fxml"));
+        GridPane root = loader.load();
+        Scene scene = new Scene(root,600,500);
+        stage.setScene(scene);
+        stage.show();
+
+        Controller2 controller2 = loader.getController();
+        controller2.auxiliar(auxiliar);
+        controller2.setVentana(this);
     }
-    @FXML
-    public void selecRaichu(ActionEvent event){
-        Siguiente.setText("Siguiente");
-        nombre1.setTextFill(Color.BLUE);
-        nivel1.setTextFill(Color.BLUE);
-        vida1.setTextFill(Color.BLUE);
+
+    public void entrada(ClasePokemon pokemon, Double progressbar){
+        if (pokemon.nombre.equals(pokemon1.nombre)){
+            vida1.setText(pokemon.vida+"/"+pokemon1.vida);
+            pb1.setProgress(progressbar);
+        }
+        if (pokemon.nombre.equals(pokemon2.nombre)){
+            vida2.setText(pokemon.vida+"/"+pokemon2.vida);
+            pb2.setProgress(progressbar);
+        }
+        if (pokemon.nombre.equals(pokemon3.nombre)){
+            vida3.setText(pokemon.vida+"/"+pokemon3.vida);
+            pb3.setProgress(progressbar);
+        }
+        if (pokemon.nombre.equals(pokemon4.nombre)){
+            vida4.setText(pokemon.vida+"/"+pokemon4.vida);
+            pb4.setProgress(progressbar);
+        }
+        if (pokemon.nombre.equals(pokemon5.nombre)){
+            vida5.setText(pokemon.vida+"/"+pokemon5.vida);
+            pb5.setProgress(progressbar);
+        }
+        if (pokemon.nombre.equals(pokemon6.nombre)){
+            vida6.setText(pokemon.vida+"/"+pokemon6.vida);
+            pb6.setProgress(progressbar);
+        }
     }
-    @FXML
-    public void selecSquirtle(ActionEvent event){
-        Siguiente.setText("Siguiente");
-        nombre1.setTextFill(Color.BLUE);
-        nivel1.setTextFill(Color.BLUE);
-        vida1.setTextFill(Color.BLUE);
-    }
-    @FXML
-    public void selecVaporeon(ActionEvent event){
-        Salir.setText("Siguiente");
-        nombre1.setTextFill(Color.BLUE);
-        nivel1.setTextFill(Color.BLUE);
-        vida1.setTextFill(Color.BLUE);
-    }
-    @FXML
-    public void selecTalonflame(ActionEvent event){
-        Siguiente.setText("Siguiente");
-        nombre1.setTextFill(Color.BLUE);
-        nivel1.setTextFill(Color.BLUE);
-        vida1.setTextFill(Color.BLUE);
-    }
+
 }
