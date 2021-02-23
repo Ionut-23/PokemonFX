@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.CheckBox;
 import javafx.scene.control.ProgressBar;
 import javafx.scene.effect.DropShadow;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.scene.paint.Color;
@@ -17,13 +18,14 @@ import javafx.stage.Stage;
 
 import java.awt.*;
 import java.awt.event.ActionEvent;
-import java.awt.event.MouseEvent;
 import java.io.IOException;
 
 public class Controller {
 
     @FXML
     public Button Siguiente;
+    @FXML
+    public Button Estadisticas;
 
     @FXML
     public ImageView imagen1;
@@ -127,6 +129,12 @@ public class Controller {
     ClasePokemon pokemon5 = new ClasePokemon("Vaporeon",58,290,"\\Imagenes\\vaporeon.gif");
     ClasePokemon pokemon6 = new ClasePokemon("Talonflame",50,190,"\\Imagenes\\talonflame.gif");
     ClasePokemon auxiliar;
+    int cont1 = 0;
+    int cont2 = 0;
+    int cont3 = 0;
+    int cont4 = 0;
+    int cont5 = 0;
+    int cont6 = 0;
 
     @FXML
     public void initialize(){
@@ -147,6 +155,7 @@ public class Controller {
         estatico(nombre4,nivel4,vida4,cb4,p4);
         estatico(nombre5,nivel6,vida5,cb5,p5);
         estatico(nombre6,nivel2,vida6,cb6,p6);
+        cont1 += 1;
     }
     public void clickImagen2(){
         estatico(nombre1,nivel1,vida1,cb1,p1);
@@ -157,6 +166,7 @@ public class Controller {
         estatico(nombre4,nivel4,vida4,cb4,p4);
         estatico(nombre5,nivel6,vida5,cb5,p5);
         estatico(nombre6,nivel2,vida6,cb6,p6);
+        cont2 += 1;
     }
     public void clickImagen3(){
         estatico(nombre1,nivel1,vida1,cb1,p1);
@@ -167,6 +177,7 @@ public class Controller {
         estatico(nombre4,nivel4,vida4,cb4,p4);
         estatico(nombre5,nivel6,vida5,cb5,p5);
         estatico(nombre6,nivel2,vida6,cb6,p6);
+        cont3 += 1;
     }
     public void clickImagen4(){
         estatico(nombre1,nivel1,vida1,cb1,p1);
@@ -177,6 +188,7 @@ public class Controller {
         auxiliar = pokemon4;
         estatico(nombre5,nivel6,vida5,cb5,p5);
         estatico(nombre6,nivel2,vida6,cb6,p6);
+        cont4 += 1;
     }
     public void clickImagen5(){
         estatico(nombre1,nivel1,vida1,cb1,p1);
@@ -187,6 +199,7 @@ public class Controller {
         pokemon5.imagen = "\\Imagenes\\vaporeonespalda.gif";
         auxiliar = pokemon5;
         estatico(nombre6,nivel2,vida6,cb6,p6);
+        cont5 += 1;
     }
     public void clickImagen6(){
         estatico(nombre1,nivel1,vida1,cb1,p1);
@@ -197,6 +210,7 @@ public class Controller {
         cambiar(nombre6,nivel2,vida6,cb6,p6);
         pokemon6.imagen = "\\Imagenes\\talonflameespalda.gif";
         auxiliar = pokemon6;
+        cont6 += 1;
     }
 
 
@@ -265,4 +279,15 @@ public class Controller {
         }
     }
 
+    public void clickEstadisticas() throws IOException {
+        Stage stage2 = new Stage();
+        FXMLLoader loader2 = new FXMLLoader(getClass().getResource("sample3.fxml"));
+        GridPane root2 = loader2.load();
+        Scene scene2 = new Scene(root2,600,600);
+        stage2.setScene(scene2);
+        stage2.show();
+
+        Controller3 controller3 = loader2.getController();
+        controller3.graficoBarras(this);
+    }
 }
